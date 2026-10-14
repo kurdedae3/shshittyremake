@@ -854,10 +854,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: db08ccb8-7849-4f9b-9822-b4fb85fc9bcf
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: remade the fing
+  organizationId: kacpisanetra
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
