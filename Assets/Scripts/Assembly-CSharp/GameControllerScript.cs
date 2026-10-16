@@ -26,11 +26,11 @@ public class GameControllerScript : MonoBehaviour
 		this.mode = PlayerPrefs.GetString("CurrentMode"); //Get the current mode
 		if (this.mode == "endless") //If it is endless mode
 		{
-			this.baldiScrpt.endless = true; //Set Baldi use his slightly changed endless anger system
+			this.baldiScrpt.endless = true; //more time with no notebooks = bladi basic fats
 		}
 		if (this.mode == "fast") //If it is fast mode
 		{
-			this.baldiScrpt.endless = true;
+			this.baldiScrpt.endless = true; 
 			//dodaj to gówno które sprawia że każdy zapierdala szybciej
 		}
 		this.schoolMusic.Play(); //Play the school music
@@ -182,7 +182,7 @@ public class GameControllerScript : MonoBehaviour
 	// Token: 0x06000966 RID: 2406 RVA: 0x00021F8C File Offset: 0x0002038C
 	private void UpdateNotebookCount()
 	{
-		if (this.mode == "story")
+		if (this.mode == "story" || this.mode == "fast" || this.mode == "speedrun")
 		{
 			this.notebookCount.text = this.notebooks.ToString() + "|12";
 		}
