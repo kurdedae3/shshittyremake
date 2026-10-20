@@ -30,7 +30,10 @@ public class GameControllerScript : MonoBehaviour
 		}
 		if (this.mode == "fast") //If it is fast mode
 		{
-			this.baldiScrpt.endless = true; 
+			this.baldiScrpt.endless = true;
+			player.walkSpeed = 2;
+			player.runSpeed = 2;
+			baldiScrpt.speed *= 2;
 			//dodaj to gówno które sprawia że każdy zapierdala szybciej
 		}
 		this.schoolMusic.Play(); //Play the school music
@@ -127,7 +130,7 @@ public class GameControllerScript : MonoBehaviour
 		if (this.player.stamina < 0f)
         {
             this.warning.SetActive(true);
-            this.warning.GetComponent<TMPro.TMP_Text>().text = "0%";
+            this.warning.GetComponent<TMPro.TMP_Text>().text = "0";
             this.warning.GetComponent<TMPro.TMP_Text>().fontSize = 43;
         }
         else if (this.player.stamina >= 0f)
@@ -140,7 +143,7 @@ public class GameControllerScript : MonoBehaviour
             this.warning.SetActive(true);
             if (num >= 1)
             {
-                this.warning.GetComponent<TMPro.TMP_Text>().text = num.ToString() + "%";
+                this.warning.GetComponent<TMPro.TMP_Text>().text = num.ToString() + "";
             }
         }
 		if (this.player.gameOver)
@@ -168,7 +171,7 @@ public class GameControllerScript : MonoBehaviour
 					PlayerPrefs.SetInt("CurrentBooks", this.notebooks);
 				}
 				Time.timeScale = 1f;
-				SceneManager.LoadScene("GameOver");
+				//SceneManager.LoadScene("GameOver");
 			}
 		}
 		if (this.finaleMode && !this.audioDevice.isPlaying && this.exitsReached == 3)
@@ -182,13 +185,13 @@ public class GameControllerScript : MonoBehaviour
 	// Token: 0x06000966 RID: 2406 RVA: 0x00021F8C File Offset: 0x0002038C
 	private void UpdateNotebookCount()
 	{
-		if (this.mode == "story" || this.mode == "fast" || this.mode == "speedrun")
+		if (this.mode == "story" || this.mode == "fast" || this.mode == "speedrun" || this.mode == "casmode" || this.mode == "placeholder")
 		{
-			this.notebookCount.text = this.notebooks.ToString() + "|12";
+			this.notebookCount.text = this.notebooks.ToString() + "";
 		}
 		else
 		{
-			this.notebookCount.text = this.notebooks.ToString() + "|∞";
+			this.notebookCount.text = this.notebooks.ToString() + "";
 		}
 		if (this.notebooks == 12 & this.mode == "story")
 		{
@@ -346,7 +349,7 @@ public class GameControllerScript : MonoBehaviour
 		{
 			this.itemSelected = 0;
 		}
-		this.itemSelect.anchoredPosition = new Vector3((float)this.itemSelectOffset[this.itemSelected], 0f, 0f); //Moves the item selector background(the red rectangle)
+		this.itemSelect.anchoredPosition = new Vector3((float)this.itemSelectOffset[this.itemSelected], 23f, 0f); //Moves the item selector background(the red rectangle)
 		this.UpdateItemName();
 	}
 
@@ -358,14 +361,14 @@ public class GameControllerScript : MonoBehaviour
 		{
 			this.itemSelected = 4;
 		}
-		this.itemSelect.anchoredPosition = new Vector3((float)this.itemSelectOffset[this.itemSelected], 0f, 0f); //Moves the item selector background(the red rectangle)
+		this.itemSelect.anchoredPosition = new Vector3((float)this.itemSelectOffset[this.itemSelected], 23f, 0f); //Moves the item selector background(the red rectangle)
 		this.UpdateItemName();
 	}
 
 	// Token: 0x06000974 RID: 2420 RVA: 0x00022425 File Offset: 0x00020825
 	private void UpdateItemSelection()
 	{
-		this.itemSelect.anchoredPosition = new Vector3((float)this.itemSelectOffset[this.itemSelected], 0f, 0f); //Moves the item selector background(the red rectangle)
+		this.itemSelect.anchoredPosition = new Vector3((float)this.itemSelectOffset[this.itemSelected], 23f, 0f); //Moves the item selector background(the red rectangle)
 		this.UpdateItemName();
 	}
 
@@ -644,6 +647,14 @@ public class GameControllerScript : MonoBehaviour
 		this.player.flipaturn = -1f;
 		Camera.main.GetComponent<CameraScript>().offset = new Vector3(0f, -1f, 0f);
 	}
+
+	//public void BetterdeathScreen()
+	//{
+		//void leavedagame()
+		//{}
+		
+		
+	//}
 
 	// Token: 0x040005F7 RID: 1527
 	public CursorControllerScript cursorController;

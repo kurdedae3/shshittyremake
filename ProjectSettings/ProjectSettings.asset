@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: dont take this seriously
-  productName: SHaldi's Building Rewritten
+  productName: SHaldi's Building Remade from the ground up
   defaultCursor: {fileID: 2800000, guid: e20f4fe154e958e4c8c7c754a6439ee8, type: 3}
   cursorHotspot: {x: 10, y: 2}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: Alpha 1.4
+  bundleVersion: Alpha 1.5
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -434,7 +434,7 @@ PlayerSettings:
     m_GraphicsJobMode: 0
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: WindowsStandaloneSupport
-    m_APIs: 020000001100000008000000
+    m_APIs: 0200000011000000
     m_Automatic: 0
   - m_BuildTarget: LinuxStandaloneSupport
     m_APIs: 1100000015000000

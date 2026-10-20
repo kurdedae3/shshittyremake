@@ -238,10 +238,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'this was made out of boredom and the fact that code in the older one was
-    a fucking mess
+  m_text: 'Warning
 
-'
+    this was made due to me being bored
+
+    (im developing this
+    only if i have some free time)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 21749360ea10093439a1f9266c91c718, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 9ea8bb120e8a8ba4aa942913babb2161, type: 2}
@@ -417,7 +419,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44658792, g: 0.49642283, b: 0.5748252, a: 1}
+  m_IndirectSpecularColor: {r: 0.44658792, g: 0.4964229, b: 0.5748252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &21
 Light:

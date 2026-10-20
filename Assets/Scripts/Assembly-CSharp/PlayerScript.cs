@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using TMPro;
 
 // Token: 0x020000D1 RID: 209
 public class PlayerScript : MonoBehaviour
@@ -26,6 +27,8 @@ public class PlayerScript : MonoBehaviour
 	// Token: 0x060009D4 RID: 2516 RVA: 0x00025D04 File Offset: 0x00024104
 	private void Update()
 	{
+		this.healthtext.text = health.ToString();
+		this.healthbar.value = health;
 		base.transform.position = new Vector3(base.transform.position.x, this.height, base.transform.position.z);
 		this.MouseMove();
 		this.PlayerMove();
@@ -73,7 +76,7 @@ public class PlayerScript : MonoBehaviour
 				this.sensitivity = 1f;
 				if (this.cc.velocity.magnitude > 0.1f & !this.hugging & !this.sweeping)
 				{
-					Camera.main.fieldOfView = Mathf.LerpAngle(Camera.main.fieldOfView, 80f, 1.5f * Time.deltaTime);
+					Camera.main.fieldOfView = Mathf.LerpAngle(Camera.main.fieldOfView, 75f, 1.5f * Time.deltaTime);
 					this.ResetGuilt("running", 0.1f);
 				}
 			}
@@ -148,12 +151,22 @@ public class PlayerScript : MonoBehaviour
 	// Token: 0x060009D8 RID: 2520 RVA: 0x000262F0 File Offset: 0x000246F0
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.transform.name == "Baldi" & !this.gc.debugMode)
-		{
-			this.gameOver = true;
-			RenderSettings.skybox = this.blackSky; //Sets the skybox black
-			base.StartCoroutine(this.KeepTheHudOff()); //Hides the Hud
-		}
+		if (other.transform.name == "Baldi" & !gc.debugMode)
+        {
+            this.health-=2f;
+            /*if (this.health == 0)
+            {
+                gameOver = true;
+                RenderSettings.skybox = blackSky; //Sets the skybox black
+                StartCoroutine(KeepTheHudOff()); //Hides the Hud
+            }*/
+			if (this.health == 0)
+            {
+                gameOver = true;
+                //RenderSettings.skybox = blackSky; //Sets the skybox black
+                //StartCoroutine(KeepTheHudOff()); //Hides the Hud
+            }
+        }
 		else if (other.transform.name == "Playtime" & !this.jumpRope & this.playtime.playCool <= 0f)
 		{
 			this.ActivateJumpRope();
@@ -165,7 +178,7 @@ public class PlayerScript : MonoBehaviour
 	{
 		while (this.gameOver)
 		{
-			this.hud.enabled = false;
+			//this.hud.enabled = false;
 			this.mobile1.enabled = false;
 			this.mobile2.enabled = false;
 			this.jumpRopeScreen.SetActive(false);
@@ -388,4 +401,9 @@ public class PlayerScript : MonoBehaviour
 
 	// Token: 0x04000714 RID: 1812
 	public Canvas mobile2;
+
+	//[]
+	public float health;
+	public Slider healthbar;
+	public TextMeshProUGUI healthtext;
 }
