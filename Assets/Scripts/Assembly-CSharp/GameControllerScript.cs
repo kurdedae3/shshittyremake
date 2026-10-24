@@ -36,6 +36,10 @@ public class GameControllerScript : MonoBehaviour
 			baldiScrpt.speed *= 2;
 			//dodaj to gówno które sprawia że każdy zapierdala szybciej
 		}
+		if (this.mode == "hard")
+		{
+			baldiScrpt.speed *= 1.5f;
+		}
 		this.schoolMusic.Play(); //Play the school music
 		this.LockMouse(); //Prevent the mouse from moving
 		this.UpdateNotebookCount(); //Update the notebook count
@@ -415,6 +419,7 @@ public class GameControllerScript : MonoBehaviour
 		{
 			if (this.item[this.itemSelected] == 1)
 			{
+				this.player.health+=1f;
 				this.player.stamina = this.player.maxStamina * 2f;
 				this.ResetItem();
 			}
@@ -611,6 +616,7 @@ public class GameControllerScript : MonoBehaviour
 		this.exitsReached++;
 		if (this.exitsReached == 1)
 		{
+			this.notebookCount.text = "1";
 			RenderSettings.ambientLight = Color.red; //Make everything red and start player the weird sound
 			//RenderSettings.fog = true;
 			this.audioDevice.PlayOneShot(this.aud_Switch, 0.8f);
@@ -620,6 +626,7 @@ public class GameControllerScript : MonoBehaviour
 		}
 		if (this.exitsReached == 2) //Play a sound
 		{
+			this.notebookCount.text = "2";
 			this.audioDevice.volume = 0.8f;
 			this.audioDevice.clip = this.aud_MachineStart;
 			this.audioDevice.loop = true;
@@ -627,6 +634,7 @@ public class GameControllerScript : MonoBehaviour
 		}
 		if (this.exitsReached == 3) //Play a even louder sound
 		{
+			this.notebookCount.text = "3";
 			this.audioDevice.clip = this.aud_MachineRev;
 			this.audioDevice.loop = false;
 			this.audioDevice.Play();

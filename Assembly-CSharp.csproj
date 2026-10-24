@@ -50,6 +50,7 @@
      <Compile Include="Assets/Scripts/Assembly-CSharp/BullyScript.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/CameraScript.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/CameraScript_Simple.cs" />
+     <Compile Include="Assets/Scripts/Assembly-CSharp/ClickIndicator.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/ClickableTest.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/CraftersScript.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/CraftersTriggerScript.cs" />
@@ -106,14 +107,17 @@
      <Compile Include="Assets/Scripts/Assembly-CSharp/StartRoundTimer.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/SweepScript.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/SwingingDoorScript.cs" />
+     <Compile Include="Assets/Scripts/Assembly-CSharp/TNVACMainMenu.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/TapePlayerScript.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/TextUnderliner.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/TimerCountUp.cs" />
+     <Compile Include="Assets/Scripts/Assembly-CSharp/TotalyNotValveAntiCheat.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/UIController.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/UiManager.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/UiSettings.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/WarningScreenScript.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/YouWonScript.cs" />
+     <Compile Include="Assets/Scripts/Assembly-CSharp/przestansiegapicnamojprofil.cs" />
      <None Include="Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap.shader" />

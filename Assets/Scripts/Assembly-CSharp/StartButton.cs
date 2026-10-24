@@ -12,9 +12,13 @@ public class StartButton : MonoBehaviour
 		{
 			PlayerPrefs.SetString("CurrentMode", "story");
 		}
-		else
+		else if (this.currentMode == StartButton.Mode.Endless)
 		{
 			PlayerPrefs.SetString("CurrentMode", "endless");
+		}
+		else if (this.currentMode == StartButton.Mode.Fast)
+		{
+			PlayerPrefs.SetString("CurrentMode", "fast");
 		}
 		SceneManager.LoadSceneAsync("School");
 	}
@@ -25,9 +29,8 @@ public class StartButton : MonoBehaviour
 	// Token: 0x020000D3 RID: 211
 	public enum Mode
 	{
-		// Token: 0x04000717 RID: 1815
 		Story,
-		// Token: 0x04000718 RID: 1816
-		Endless
+		Endless,
+		Fast
 	}
 }

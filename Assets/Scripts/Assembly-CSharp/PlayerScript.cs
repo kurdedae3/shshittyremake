@@ -154,15 +154,12 @@ public class PlayerScript : MonoBehaviour
 		if (other.transform.name == "Baldi" & !gc.debugMode)
         {
             this.health-=2f;
-            /*if (this.health == 0)
-            {
-                gameOver = true;
-                RenderSettings.skybox = blackSky; //Sets the skybox black
-                StartCoroutine(KeepTheHudOff()); //Hides the Hud
-            }*/
+			this.audioDevice.PlayOneShot(this.aud_cs_damage);
 			if (this.health == 0)
             {
                 gameOver = true;
+				this.fakehud.SetActive(false);
+				this.gameOverScreen.SetActive(true);
                 //RenderSettings.skybox = blackSky; //Sets the skybox black
                 //StartCoroutine(KeepTheHudOff()); //Hides the Hud
             }
@@ -406,4 +403,8 @@ public class PlayerScript : MonoBehaviour
 	public float health;
 	public Slider healthbar;
 	public TextMeshProUGUI healthtext;
+	public AudioSource audioDevice;
+	public AudioClip aud_cs_damage;
+	public GameObject fakehud;
+	public GameObject gameOverScreen;
 }
