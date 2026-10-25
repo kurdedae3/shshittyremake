@@ -394898,7 +394898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorController: {fileID: 21219}
   player: {fileID: 21229}
-  Player: {fileID: 0}
+  Player: {fileID: 21229}
   playerTransform: {fileID: 6220}
   cameraTransform: {fileID: 8852}
   camera: {fileID: 10232}
@@ -592693,6 +592693,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5dd789d4f0b9e5a49b1e17d2f0effae9, type: 3}
   firstButton: {fileID: 1646515215}
   baldiAudio: {fileID: 1579952633}
+  videoPlayer: {fileID: 0}
 --- !u!114 &1579952635
 MonoBehaviour:
   m_ObjectHideFlags: 0

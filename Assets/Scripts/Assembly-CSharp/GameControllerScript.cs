@@ -527,24 +527,21 @@ public class GameControllerScript : MonoBehaviour
 				base.StartCoroutine(this.BootAnimation());
 				this.ResetItem();
 			}
-			else if (this.item[this.itemSelected] == 11) //the powder you have been sniffing also makes you fast af
+			else if (this.item[this.itemSelected] == 11)
             {
                 this.ResetItem();
                 base.StartCoroutine(Speed());
                 Player.walkSpeed *= 2;
                 Player.runSpeed *= 2;
-                //this.audioDevice.PlayOneShot(this.aud_Snif);
-                this.player.stamina = this.player.maxStamina * 4f;
-                //this.efect.SetActive(true); //copy  n pasted from older thingy
             }
 		}
 	}
 
-	public IEnumerator Speed()
+	private IEnumerator Speed()
     {
-        yield return new WaitForSeconds(100); //from a random tutorial....
-        Player.walkSpeed = 18;
-        Player.runSpeed = 24;
+        yield return new WaitForSeconds(15);
+        Player.walkSpeed = 10;
+        Player.runSpeed = 16;
     }
 
 	// Token: 0x06000977 RID: 2423 RVA: 0x00022B40 File Offset: 0x00020F40
@@ -618,7 +615,7 @@ public class GameControllerScript : MonoBehaviour
 		{
 			this.notebookCount.text = "1";
 			RenderSettings.ambientLight = Color.red; //Make everything red and start player the weird sound
-			//RenderSettings.fog = true;
+			RenderSettings.fog = true;
 			this.audioDevice.PlayOneShot(this.aud_Switch, 0.8f);
 			this.audioDevice.clip = this.aud_MachineQuiet;
 			this.audioDevice.loop = true;
