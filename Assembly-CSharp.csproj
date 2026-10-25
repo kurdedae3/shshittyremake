@@ -60,6 +60,7 @@
      <Compile Include="Assets/Scripts/Assembly-CSharp/DebugScript.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/DefaultSettingsScript.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/DetentionTextScript.cs" />
+     <Compile Include="Assets/Scripts/Assembly-CSharp/Discord.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/DoorScript.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/EndlessNotebookScript.cs" />
      <Compile Include="Assets/Scripts/Assembly-CSharp/EndlessTextScript.cs" />
