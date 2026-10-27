@@ -8,6 +8,14 @@ public class DefaultSettingsScript : MonoBehaviour
 	// Token: 0x06000028 RID: 40 RVA: 0x0000290E File Offset: 0x00000D0E
 	private void Start()
 	{
+		if (PlayerPrefs.HasKey("SoundVolume"))
+		{
+			AudioListener.volume = PlayerPrefs.GetFloat("SoundVolume");
+		}
+		if (PlayerPrefs.HasKey("Fullscreen"))
+		{
+			Screen.fullScreen = PlayerPrefs.GetInt("Fullscreen") == 1;
+		}
 		if (!PlayerPrefs.HasKey("OptionsSet"))
 		{
 			this.options.SetActive(true);

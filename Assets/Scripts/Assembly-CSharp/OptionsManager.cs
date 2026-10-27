@@ -10,6 +10,8 @@ public class OptionsManager : MonoBehaviour
 	{
 		if (PlayerPrefs.HasKey("OptionsSet"))
 		{
+			fullscreenToggle.isOn = PlayerPrefs.GetInt("Fullscreen") == 1;
+			volumeSlider.value = PlayerPrefs.GetFloat("SoundVolume");
 			slider.value = PlayerPrefs.GetFloat("MouseSensitivity");
 			if (PlayerPrefs.GetInt("Rumble") == 1)
 			{
@@ -54,14 +56,18 @@ public class OptionsManager : MonoBehaviour
 		{
 			PlayerPrefs.SetInt("AnalogMove", 0);
 		}
+		PlayerPrefs.SetFloat("SoundVolume", volumeSlider.value);
+		AudioListener.volume = volumeSlider.value;
+	}
+	public void ToggleFullscreen(bool toggle)
+	{
+		Screen.fullScreen = toggle;
+		PlayerPrefs.SetInt("Fullscreen", toggle ? 1 : 0);
 	}
 
-	// Token: 0x0400006F RID: 111
 	public Slider slider;
-
-	// Token: 0x04000070 RID: 112
+	public Slider volumeSlider;
 	public Toggle rumble;
-
-	// Token: 0x04000071 RID: 113
 	public Toggle analog;
+	public Toggle fullscreenToggle;
 }

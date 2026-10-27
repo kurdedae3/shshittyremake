@@ -175,7 +175,7 @@ public class GameControllerScript : MonoBehaviour
 					PlayerPrefs.SetInt("CurrentBooks", this.notebooks);
 				}
 				Time.timeScale = 1f;
-				//SceneManager.LoadScene("GameOver");
+				SceneManager.LoadScene("GameOver");
 			}
 		}
 		if (this.finaleMode && !this.audioDevice.isPlaying && this.exitsReached == 3)
@@ -183,6 +183,18 @@ public class GameControllerScript : MonoBehaviour
 			this.audioDevice.clip = this.aud_MachineLoop;
 			this.audioDevice.loop = true;
 			this.audioDevice.Play();
+		}
+		if (this.item[this.itemSelected] == 12)
+		{
+    		this.handHolder.SetActive(false);
+    		this.itemHolder.SetActive(false);
+    		this.equippingHand.SetActive(true);
+		}
+		else
+		{
+    		this.handHolder.SetActive(true);
+    		this.itemHolder.SetActive(true);
+    		this.equippingHand.SetActive(false);
 		}
 	}
 
@@ -534,8 +546,14 @@ public class GameControllerScript : MonoBehaviour
                 Player.walkSpeed *= 2;
                 Player.runSpeed *= 2;
             }
+			else  if (this.item[this.itemSelected] == 12)
+			{
+				
+			}
 		}
 	}
+
+	
 
 	private IEnumerator Speed()
     {
@@ -879,6 +897,11 @@ public class GameControllerScript : MonoBehaviour
 
 	// Token: 0x04000639 RID: 1593
 	public AudioSource learnMusic;
+
+	public GameObject handHolder;
+	public GameObject itemHolder;
+	public GameObject equippingHand;
+	
 
 	// Token: 0x0400063A RID: 1594
 	//private Player playerInput;
