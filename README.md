@@ -3,4 +3,4 @@
 3. follow these rules:
 -Credit the original Creator (Me)
 -DO NOT SAY ITS YOURS (Dont steal it)
-4.have fun ig
+4.have fun stealing 1/2 of the scripts (atp just ask me to help ypu)
