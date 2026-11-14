@@ -388512,7 +388512,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b189eadc0a583cb4c91e2bf0660cc1c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14c186075e7f02e428609a49a165eda5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -397921,25 +397921,23 @@ MonoBehaviour:
   angry: 0
   inOffice: 0
   audTimes:
-  - {fileID: 8300000, guid: e0d32007008444948addb36500bf2202, type: 3}
-  - {fileID: 8300000, guid: f53e522dd468f2d4fa419110d5d4701c, type: 3}
-  - {fileID: 8300000, guid: 432efbf52cfa32a40927aa0ccb27b642, type: 3}
-  - {fileID: 8300000, guid: 13248d048d4830d40b23503e9afcbe5a, type: 3}
-  - {fileID: 8300000, guid: 4f2929eb723e2ca4fb6a92398b9b251a, type: 3}
+  - {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  - {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  - {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  - {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  - {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
   audScolds:
-  - {fileID: 8300000, guid: 4630248b6e6ebf847befb6bfda17c0f6, type: 3}
-  - {fileID: 8300000, guid: cdbaacca400641841b5ba547c05ea007, type: 3}
-  - {fileID: 8300000, guid: 7a966a5fa7d63c54a9b46f63638c1a10, type: 3}
-  audDetention: {fileID: 8300000, guid: ea07dbc2e7b43c1409314b7c066ba033, type: 3}
-  audNoDrinking: {fileID: 8300000, guid: 255b0bad60ded5b4d872da1de9f99d14, type: 3}
-  audNoBullying: {fileID: 8300000, guid: a4f817aaffa088245ba3a78a202ac059, type: 3}
-  audNoFaculty: {fileID: 8300000, guid: c8159c1b0c3e4fa4eb498a77d5cff05a, type: 3}
-  audNoLockers: {fileID: 8300000, guid: 266b846d4a4be004799b00597e342daf, type: 3}
-  audNoRunning: {fileID: 8300000, guid: ebc462290b9cf7c459292ca152383c70, type: 3}
-  audNoStabbing: {fileID: 8300000, guid: f55be4704ae2f4c4bb5c903e83638b7d, type: 3}
-  audNoEscaping: {fileID: 8300000, guid: 766320dd6a6fc8b4ba099a4e35fc866f, type: 3}
-  aud_Whistle: {fileID: 8300000, guid: e3cc2b2bad78af547ae9f2993c1f1115, type: 3}
-  aud_Delay: {fileID: 8300000, guid: 6a96f86bffb774442970da33fd929c06, type: 3}
+  - {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  audDetention: {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  audNoDrinking: {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  audNoBullying: {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  audNoFaculty: {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  audNoLockers: {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  audNoRunning: {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  audNoStabbing: {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  audNoEscaping: {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  aud_Whistle: {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
+  aud_Delay: {fileID: 8300000, guid: 1f48636d73f424b4c8ad30815f2ed9fc, type: 3}
   quietAudioDevice: {fileID: 20475}
   cc: {fileID: 20557}
 --- !u!114 &21446
@@ -398146,18 +398144,14 @@ MonoBehaviour:
   player: {fileID: 6220}
   wanderTarget: {fileID: 5833}
   aud_Found:
-  - {fileID: 8300000, guid: 29ef99924d409394084ea02a014fbd0e, type: 3}
-  - {fileID: 8300000, guid: 6d47b23efa22e5d419c635878e29cf96, type: 3}
+  - {fileID: 8300000, guid: 5c02b4b3a50e53242885e53bfbdaa2e3, type: 3}
   aud_Lost:
-  - {fileID: 8300000, guid: ceec70c0f277c924abd8fd196611f418, type: 3}
-  - {fileID: 8300000, guid: c51f9a76b4039914d822f50b8b365e43, type: 3}
+  - {fileID: 8300000, guid: 5c02b4b3a50e53242885e53bfbdaa2e3, type: 3}
   aud_Hug:
   - {fileID: 8300000, guid: ff2d289345ad65f47b910d300d78f4e6, type: 3}
-  - {fileID: 8300000, guid: 6cb058bb62335074aa96f418c103fb7e, type: 3}
   aud_Random:
-  - {fileID: 8300000, guid: 494a9c50cd154b14f8022fb85c05eb68, type: 3}
-  - {fileID: 8300000, guid: 448442495ada1254388c5458c08c5a37, type: 3}
-  audBang: {fileID: 8300000, guid: 3b610cea7c5a8344d8e68e697374f66b, type: 3}
+  - {fileID: 8300000, guid: 5c02b4b3a50e53242885e53bfbdaa2e3, type: 3}
+  audBang: {fileID: 8300000, guid: 5c02b4b3a50e53242885e53bfbdaa2e3, type: 3}
   audioDevice: {fileID: 20504}
   motorAudio: {fileID: 20503}
 --- !u!114 &21458
