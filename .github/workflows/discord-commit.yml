@@ -1,0 +1,22 @@
+name: Discord Commit Notifier
+
+on:
+  push:
+    branches:
+      - main  # pain
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 #shat
+
+      - name: Send Discord Notification
+        uses: bytelabs-software/discord-commit-notifications@v1
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          embed-title: "pushing to hard"
+          embed-color: "0x9834db"
