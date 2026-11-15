@@ -209,7 +209,7 @@ public class GameControllerScript : MonoBehaviour
 		{
 			this.notebookCount.text = this.notebooks.ToString() + "";
 		}
-		if (this.notebooks == 12 & this.mode == "story")
+		if (this.notebooks == 12 && (this.mode == "story" || this.mode == "fast" || this.mode == "speedrun" || this.mode == "casmode" || this.mode == "placeholder"))
 		{
 			this.ActivateFinaleMode();
 		}
