@@ -27,6 +27,7 @@ public class PlayerScript : MonoBehaviour
 	// Token: 0x060009D4 RID: 2516 RVA: 0x00025D04 File Offset: 0x00024104
 	private void Update()
 	{
+		this.CheckHealthHudCosmetic();
 		this.healthtext.text = health.ToString();
 		this.healthbar.value = health;
 		base.transform.position = new Vector3(base.transform.position.x, this.height, base.transform.position.z);
@@ -167,6 +168,22 @@ public class PlayerScript : MonoBehaviour
 		else if (other.transform.name == "Playtime" & !this.jumpRope & this.playtime.playCool <= 0f)
 		{
 			this.ActivateJumpRope();
+		}
+	}
+
+	private void CheckHealthHudCosmetic()
+	{
+		if (this.health <= 3)
+		{
+			this.sliderhealthfill.GetComponent<Image>().color = Color.red;
+			this.healthBarimg.GetComponent<RawImage>().color = Color.red;
+			this.healthtext.GetComponent<TMP_Text>().color = Color.red;
+		}
+		else
+		{
+			this.sliderhealthfill.GetComponent<Image>().color = Color.white;
+			this.healthBarimg.GetComponent<RawImage>().color = Color.white;
+			this.healthtext.GetComponent<TMP_Text>().color = Color.white;
 		}
 	}
 
@@ -407,4 +424,6 @@ public class PlayerScript : MonoBehaviour
 	public AudioClip aud_cs_damage;
 	public GameObject fakehud;
 	public GameObject gameOverScreen;
+	public RawImage healthBarimg;
+	public Image sliderhealthfill;
 }

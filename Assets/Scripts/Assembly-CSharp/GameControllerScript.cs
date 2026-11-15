@@ -134,6 +134,9 @@ public class GameControllerScript : MonoBehaviour
 		if (this.player.stamina < 0f)
         {
             this.warning.SetActive(true);
+			this.sliderfill.GetComponent<Image>().color = Color.red;
+			this.sprintBar.GetComponent<RawImage>().color = Color.red;
+			this.warning.GetComponent<TMP_Text>().color = Color.red;
             this.warning.GetComponent<TMPro.TMP_Text>().text = "0";
             this.warning.GetComponent<TMPro.TMP_Text>().fontSize = 43;
         }
@@ -147,6 +150,9 @@ public class GameControllerScript : MonoBehaviour
             this.warning.SetActive(true);
             if (num >= 1)
             {
+				this.sliderfill.GetComponent<Image>().color = Color.white;
+				this.sprintBar.GetComponent<RawImage>().color = Color.white;
+				this.warning.GetComponent<TMP_Text>().color = Color.white;
                 this.warning.GetComponent<TMPro.TMP_Text>().text = num.ToString() + "";
             }
         }
@@ -290,7 +296,6 @@ public class GameControllerScript : MonoBehaviour
         this.gottaSweep.SetActive(true); //Turns on Gotta Sweep
         this.bully.SetActive(true); //Turns on Bully
         this.firstPrize.SetActive(true); //Turns on First-Prize
-		//this.TestEnemy.SetActive(true); //Turns on Test-Enemy
 		this.audioDevice.PlayOneShot(this.aud_Hang); //Plays the hang sound
 		this.learnMusic.Stop(); //Stop all the music
 		this.schoolMusic.Stop();
@@ -304,6 +309,12 @@ public class GameControllerScript : MonoBehaviour
 		this.entrance_1.Raise();
 		this.entrance_2.Raise();
 		this.entrance_3.Raise();
+	}
+
+	public void MoreFinaleModeStuff()
+	{
+		//this.bomb.SetActive(true);
+		//this.endGameScript.enabled = true;
 	}
 
 	// Token: 0x0600096F RID: 2415 RVA: 0x000221F4 File Offset: 0x000205F4
@@ -351,7 +362,7 @@ public class GameControllerScript : MonoBehaviour
 			this.quarter.SetActive(true);
 			this.tutorBaldi.PlayOneShot(this.aud_Prize);
 		}
-		else if (this.notebooks == 7 & this.mode == "story") // Plays the all 7 notebook sound
+		else if (this.notebooks == 12 && (this.mode == "story" || this.mode == "fast" || this.mode == "speedrun" || this.mode == "casmode" || this.mode == "placeholder"))
 		{
 			this.audioDevice.PlayOneShot(this.aud_AllNotebooks, 0.8f);
 		}
@@ -391,6 +402,7 @@ public class GameControllerScript : MonoBehaviour
 	// Token: 0x06000975 RID: 2421 RVA: 0x0002245C File Offset: 0x0002085C
 	public void CollectItem(int item_ID)
 	{
+		this.audioDevice.PlayOneShot(this.aud_ItemPickup);
 		if (this.item[0] == 0)
 		{
 			this.item[0] = item_ID; //Set the item slot to the Item_ID provided
@@ -546,14 +558,23 @@ public class GameControllerScript : MonoBehaviour
                 Player.walkSpeed *= 2;
                 Player.runSpeed *= 2;
             }
-			else  if (this.item[this.itemSelected] == 12)
-			{
-				
-			}
+			else if (item[itemSelected] == 12)
+            {
+                //Instantiate<GameObject>(gunBullet, playerTransform.position, cameraTransform.rotation);
+                //ResetItem();
+                //player.ResetGuilt("shooting", 1f);
+                //audioDevice.PlayOneShot(aud_Shoot);
+                /*if (this.player.jumpRope)
+                {
+                	audioDevice.PlayOneShot(aud_Shoot);
+                	player.ResetGuilt("shooting", 1f);
+                	player.DeactivateJumpRope();
+                	//playtimeScript.DisappointWithGun();
+                	ResetItem();
+                }*/
+            } //playtime has been VACed (after all, valves anti cheat can do something)
 		}
 	}
-
-	
 
 	private IEnumerator Speed()
     {
@@ -828,6 +849,7 @@ public class GameControllerScript : MonoBehaviour
 
 	// Token: 0x04000622 RID: 1570
 	public GameObject bsodaSpray;
+	public GameObject gunBullet;
 
 	// Token: 0x04000623 RID: 1571
 	public GameObject alarmClock;
@@ -902,6 +924,12 @@ public class GameControllerScript : MonoBehaviour
 	public GameObject itemHolder;
 	public GameObject equippingHand;
 	
+	public RawImage sprintBar;
+	public Image sliderfill;
+	public AudioClip aud_ItemPickup;
+
+	//public EndGameScript endGameScript;
+	//	public GameObject bomb;
 
 	// Token: 0x0400063A RID: 1594
 	//private Player playerInput;
