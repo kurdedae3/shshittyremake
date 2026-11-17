@@ -38,7 +38,7 @@ public class GameControllerScript : MonoBehaviour
 		}
 		if (this.mode == "hard")
 		{
-			baldiScrpt.speed *= 1.5f;
+			baldiScrpt.speed *= 2.75f;
 		}
 		this.schoolMusic.Play(); //Play the school music
 		this.LockMouse(); //Prevent the mouse from moving
